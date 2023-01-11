@@ -5,7 +5,7 @@
         private $prezzo;
         private $utilizzo;
 
-        public function __construct(string $nome, string $immagine, $prezzo, $utilizzo)
+        public function __construct(string $nome, string $immagine, float $prezzo, $utilizzo)
         {   $this -> nome = $nome;
             $this -> immagine = $immagine;
             $this -> prezzo = $prezzo;
