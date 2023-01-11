@@ -4,7 +4,7 @@
         private $materiale;
 
         public function setGame($materia){
-            return $this -> materiale = $materia;
+             $this -> materiale = $materia;
         }
 
         public function getGame(){

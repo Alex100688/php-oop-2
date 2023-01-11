@@ -8,4 +8,35 @@
     $production = new Prodotti("Guinzaglio", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpVQhjbmHx2_OHWwy137aJlmBAUz99qlOp_UVqJfR58wg4geNwlZZ9vcaJC0eFQMJwk_w&usqp=CAU ", 20, "adatto per portare i cani a passeggio", $cane);
     $footer = new Cibo("Cibo per animali", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQogGLe6mlZZO6zsTpQXIQy4DnMWt0moJfTdope7Xyd7Vb8xMQwT-Ysbg8js1XksisUAO4&usqp=CAU", 40, "cibo nutriente per i nostri amici a quattro zampe", $gatto);
     $footer -> setCibo("carne magra");
-    $game -> setGame("tessuto");
+    $game = new Gioco("Gioco per la salute dei denti", "https://www.google.com/aclk?sa=l&ai=DChcSEwiYr4z408D8AhWawXcKHbwzDuMYABAJGgJlZg&sig=AOD64_1QT5Ce4MtMSLZ8ZI2_FqdOUYoP9A&adurl&ctype=5&ved=2ahUKEwjCgYL408D8AhXsmycCHRfMAjUQvhd6BAgBEHU", 40, " osso adatto per la salute dei denti", $cane);
+    $game -> setGame("plastica");
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Shiop Animali</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="my-3">Negozio per i tuoi amici a 4 zampe</h1>
+            <div class="row">
+                <div class="col-4">
+                    <div class="card">
+                        <img src="<?php echo $production -> getImage() ?> " class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
