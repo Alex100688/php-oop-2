@@ -4,12 +4,14 @@
         private $immagine;
         private $prezzo;
         private $utilizzo;
+        private $categoria;
 
-        public function __construct(string $nome, string $immagine, float $prezzo, $utilizzo)
+        public function __construct(string $nome, string $immagine, float $prezzo, $utilizzo, Categoria $categoria)
         {   $this -> nome = $nome;
             $this -> immagine = $immagine;
             $this -> prezzo = $prezzo;
             $this -> utilizzo = $utilizzo;
+            $this -> categoria = $categoria;
            
         }
 
@@ -29,5 +31,7 @@
             return $this -> utilizzo;
         }
 
-
+        public function getCategory(){
+            return $this -> categoria;
+        }
     }
