@@ -11,6 +11,11 @@
     $game = new Gioco("Gioco per la salute dei denti", "https://www.google.com/aclk?sa=l&ai=DChcSEwiYr4z408D8AhWawXcKHbwzDuMYABAJGgJlZg&sig=AOD64_1QT5Ce4MtMSLZ8ZI2_FqdOUYoP9A&adurl&ctype=5&ved=2ahUKEwjCgYL408D8AhXsmycCHRfMAjUQvhd6BAgBEHU", 40, " osso adatto per la salute dei denti", $cane);
     $game -> setGame("plastica");
 
+    $prodotti = [
+        $production,
+        $footer
+    ];
+
 ?>
 
 <!DOCTYPE html>
@@ -26,16 +31,19 @@
         <div class="container">
             <h1 class="my-3">Negozio per i tuoi amici a 4 zampe</h1>
             <div class="row">
+                <?php foreach($prodotti as $production) { ?>
                 <div class="col-4">
                     <div class="card">
                         <img src="<?php echo $production -> getImage() ?> " class="card-img-top" alt="<?php echo $production -> getName()?>">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $production -> getName()?></h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <p class="card-text"><?php echo $production -> getUtility()?></p>
+                            <p class="card-text">Compra a soli <?php echo $production -> getPrice()?>€</p>
+                            <a href="#" class="btn btn-primary">METTI NEL CARELLO</a>
                         </div>
                     </div>
                 </div>
+                <?php } ?>
             </div>
         </div>
     </body>
