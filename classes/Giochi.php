@@ -4,9 +4,13 @@
         private $materiale;
 
         public function setGame($materia){
-             $this -> materiale = $materia;
+            if($materia !== "plastica"){
+                throw new Exception("Non hai inserito la parola giusta");
+            }
+            $this -> materiale = $materia;
         }
 
+       
         public function getGame(){
             return $this -> materiale;
         }
