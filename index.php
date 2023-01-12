@@ -3,8 +3,8 @@
     require_once __DIR__. "/classes/Cibo.php";
     require_once __DIR__. "/classes/Animali.php";
     require_once __DIR__. "/classes/Giochi.php";
-    $cane = new Categoria("Cane", " icona cane");
-    $gatto = new Categoria ("Gatto", "icona gatto");
+    $cane = new Categoria("Cane", '<i class="fa-solid fa-dog"></i>');
+    $gatto = new Categoria ("Gatto", '<i class="fa-solid fa-cat"></i>');
     $production = new Prodotti("Guinzaglio", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpVQhjbmHx2_OHWwy137aJlmBAUz99qlOp_UVqJfR58wg4geNwlZZ9vcaJC0eFQMJwk_w&usqp=CAU ", 20, "adatto per portare i cani a passeggio", $cane);
     $footer = new Cibo("Cibo per animali", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQogGLe6mlZZO6zsTpQXIQy4DnMWt0moJfTdope7Xyd7Vb8xMQwT-Ysbg8js1XksisUAO4&usqp=CAU", 40, "cibo nutriente per i nostri amici a quattro zampe", $gatto);
     $footer -> setCibo("carne magra");
@@ -26,6 +26,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Shiop Animali</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
         <div class="container">
@@ -37,6 +38,8 @@
                         <img src="<?php echo $production -> getImage() ?> " class="card-img-top" alt="<?php echo $production -> getName()?>">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $production -> getName()?></h5>
+                            <h3>Categoria dell'animale <?php echo $production -> getCategory() -> getSimboloAnimale()?></h3>
+                            <h3><?php echo $production -> getCategory() -> getNomeAnimale()?></h3>
                             <p class="card-text"><?php echo $production -> getUtility()?></p>
                             <p class="card-text">Compra a soli <?php echo $production -> getPrice()?>€</p>
                             <a href="#" class="btn btn-primary">METTI NEL CARELLO</a>
